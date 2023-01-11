@@ -1,0 +1,44 @@
+set(modulename include)
+
+set(${modulename}_moc_files
+
+)
+
+set(${modulename}_source_files
+)
+
+set(${modulename}_uic_files
+
+)
+
+set(include_dir  
+    ${CMAKE_CURRENT_SOURCE_DIR}/${modulename}  
+)
+
+file(GLOB ${modulename}_ormpp "${modulename}/ormpp/*.h*")
+
+set(include_dir  
+    ${include_dir}  
+    ${CMAKE_CURRENT_SOURCE_DIR}/${modulename}
+    ${CMAKE_CURRENT_SOURCE_DIR}/${modulename}/ormpp
+)
+
+set(moc_files    
+    ${moc_files}    
+    ${${modulename}_moc_files}
+)
+
+set(source_files 
+    ${source_files} 
+    ${${modulename}_source_files} 
+    ${${modulename}_ormpp} 
+)
+
+set(uic_files    
+    ${uic_files}    
+    ${${modulename}_uic_files}
+)
+
+source_group(${modulename} FILES  ${${modulename}_uic_files} ${${modulename}_moc_files})
+
+source_group("${modulename}\\ormpp" FILES ${${modulename}_ormpp})

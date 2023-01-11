@@ -1,0 +1,22 @@
+set(modulename main)
+
+set(${modulename}_moc_files
+
+)
+
+set(${modulename}_source_files
+    ${modulename}/main.cpp
+
+)
+
+set(${modulename}_uic_files
+
+)
+
+
+
+set(include_dir  ${include_dir}  ${CMAKE_CURRENT_SOURCE_DIR}/${modulename})
+set(moc_files    ${moc_files}    ${${modulename}_moc_files})
+set(source_files ${source_files} ${${modulename}_source_files})
+set(uic_files    ${uic_files}    ${${modulename}_uic_files})
+source_group(${modulename} FILES ${${modulename}_source_files} ${${modulename}_uic_files} ${${modulename}_moc_files})
