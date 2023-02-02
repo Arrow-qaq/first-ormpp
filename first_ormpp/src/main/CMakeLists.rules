@@ -6,6 +6,7 @@ set(${modulename}_moc_files
 
 set(${modulename}_source_files
     ${modulename}/main.cpp
+    ${modulename}/OrmPPProxy.h
 
 )
 

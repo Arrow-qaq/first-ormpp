@@ -24,11 +24,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #设置窗口程序对应的入口函数是Winmain，控制台程序对应的入口函数是main
 #SET(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
 #增加宏定义
-if(WIN32)
-    add_definitions(-DORMPP_ENABLE_MYSQL)
-    add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
-#    add_definitions(-DORMPP_ENABLE_SQLITE3)
-endif(WIN32)
+add_definitions(-DWIN32)
+add_definitions(-DORMPP_ENABLE_MYSQL)
+add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
 #工程类型
 if(DEBUG)
     SET(CMAKE_BUILD_TYPE    "Debug")
