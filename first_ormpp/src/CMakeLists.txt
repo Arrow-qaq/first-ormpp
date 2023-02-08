@@ -16,14 +16,13 @@ include_directories(
     ./
     ${include_dir}
     ${CMAKE_CURRENT_SOURCE_DIR}/iguana
-    ${BUILD_DIR}/
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${CMAKE_CURRENT_SOURCE_DIR}/mysql
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/ormpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/mysql
    )
 
 link_directories(${OUTPUT_DLL_PATH})
 link_directories(${LINK_LIB_PATH})
-
 
 add_executable(${PROJECT_NAME} ${moc_files} ${source_files} ${uic_files} ${HEADER_MOCS} ${UIC_OUTPUTS} ${RESOURCES_RCC} ${header_files})
 target_link_libraries(${PROJECT_NAME} mysqlclient) 
